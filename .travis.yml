@@ -13,6 +13,13 @@ git:
 script:
   - yarn build
 
+notifications:
+  email:
+    recipients:
+      - migueljomartinez@gmail.com
+    on_success: always
+    on_failure: always
+
 deploy:
   provider: pages
   skip-cleanup: true
@@ -21,3 +28,5 @@ deploy:
   local_dir: dist/
   target-branch: gh-pages
   commit_message: "Deploy del proyecto"
+  on:
+    branch: master
